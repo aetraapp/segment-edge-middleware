@@ -1,18 +1,29 @@
 {
-	"name": "segment-edge-sdk",
-	"version": "0.0.0",
-	"private": true,
-	"scripts": {
-		"deploy": "wrangler deploy",
-		"dev": "wrangler dev",
-		"start": "wrangler dev",
-		"test": "vitest",
-		"cf-typegen": "wrangler types"
-	},
-	"devDependencies": {
-		"@cloudflare/vitest-pool-workers": "^0.8.19",
-		"typescript": "^5.5.2",
-		"vitest": "~3.2.0",
-		"wrangler": "^4.22.0"
-	}
+  "dependencies": {
+    "@biomejs/biome": "2.0.5"
+  },
+  "devDependencies": {
+    "@cloudflare/vitest-pool-workers": "^0.8.19",
+    "lefthook": "^1.11.14",
+    "typescript": "^5.5.2",
+    "vitest": "~3.2.0",
+    "wrangler": "^4.22.0"
+  },
+  "name": "segment-edge-sdk",
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "lefthook"
+    ]
+  },
+  "private": true,
+  "scripts": {
+    "cf-typegen": "wrangler types",
+    "deploy": "wrangler deploy",
+    "dev": "wrangler dev --local-protocol=https",
+    "lint": "biome check .",
+    "lint:fix": "biome check . --write",
+    "start": "wrangler dev",
+    "test": "vitest"
+  },
+  "version": "0.0.0"
 }
