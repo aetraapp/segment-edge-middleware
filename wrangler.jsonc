@@ -6,5 +6,10 @@
   "observability": {
     "enabled": true
   },
-  "routes": ["www.example.com"]
+  "routes": [
+    {
+      "custom_domain": true,
+      "pattern": "www.example.com"
+    }
+  ]
 }
